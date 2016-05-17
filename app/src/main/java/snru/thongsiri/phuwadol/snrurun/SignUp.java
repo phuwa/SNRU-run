@@ -15,7 +15,7 @@ public class SignUp extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton choice1RadioButton, choice2RadioButton, choice3RadioButton, choice4RadioButton, choice5RadioButton;
 
-    private String nameString, userString, passwordString, avatarString;
+    private String nameString, userString, passwordString, avatarString = "0";
 
 
 
@@ -27,7 +27,39 @@ public class SignUp extends AppCompatActivity {
         //Bind Widget
         bindWidget();
 
+        //Radio Button Controller
+        radioButtonController();
+
+
+
     }//Main Mathod
+
+    private void radioButtonController() {
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int i) {
+                switch (i) {
+                    case R.id.radioButton:
+                        avatarString = "0";
+                        break;
+                    case R.id.radioButton2:
+                        avatarString = "1";
+                        break;
+                    case R.id.radioButton3:
+                        avatarString = "2";
+                        break;
+                    case R.id.radioButton4:
+                        avatarString = "3";
+                        break;
+                    case R.id.radioButton5:
+                        avatarString = "4";
+                        break;
+                }
+            }
+        });
+
+    }
 
     private void bindWidget() {
         nameEditText = (EditText) findViewById(R.id.editText);
@@ -58,6 +90,8 @@ public class SignUp extends AppCompatActivity {
 
         }
         else {
+
+
 
         }
 
